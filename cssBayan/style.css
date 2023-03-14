@@ -1,55 +1,46 @@
-
 ul {
-  padding: 0;
+ padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
+  color: blue;
 }
-
-img {
-  
-  cursor: pointer;
+.ul__wrapper:hover .li__wrapper{
+  color: black;
+}
+li {
+  padding-left:3rem;
 }
 
 label {
   width: 100%;
+  display: flex;
+  
+  flex-direction: column;
 }
 
 .body__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 50px;
-  min-width: 320px;
+  margin: 0 auto;
+  max-width: 70rem;
+  width: 100%;
   background-color: rgb(246,246,236);
-  border-radius: 5px;
+  border-radius: .5rem;
  
 }
 .h1 {
   color: black;
 }
 .li__wrapper {
-  border-bottom: 1px solid rgb(228, 232, 231);
+  border-top: .2rem solid rgb(155, 161, 161);
   display: flex;
   justify-content: space-between;
-
-}
-
-.img__hidden {
-  display: none;
-  padding-bottom: 10px;
 }
 
 .cross {
-  width: 16px;
+  width: 1.5rem;
   transform: rotate(45deg);
-}
-
-.li__wrapper:hover .img__hidden {
-  display: block;
-}
-
-.li__wrapper:hover span {
-  color: black;
 }
 
 .li__wrapper:hover .cross {
@@ -61,39 +52,67 @@ label {
   display: flex;
   justify-content: space-between;
   font-weight: bolder;
-  
 }
 
 .label__wrapper span {
-  padding: 10px 0;
-  color: blue;
+  padding: .5rem 0;
+  
 }
 
 .input__radio {
   display: none;
 }
 
-.input__radio+label {
-  cursor: pointer;
+.input__radio:checked+label .img__active {
+  box-shadow: rgba(38, 100, 235, 0.76) 0px 0px 30px 10px;
+  box-sizing: border-box;
+  width:25%;
+  height: 75%;
+  opacity: 1;
+  padding: .5rem;
 }
 
-.input__radio:checked+label .img__active {
-  display: block;
+.input__radio:checked + label span{
+  color: black;
+}
+
+ .img__active {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  border-radius: .3rem;
+margin: .5rem auto;
+}
+
+.li__wrapper:hover .img__active {
+  opacity: 1;
+  transition:  2s;
+  box-sizing: border-box;
+  width:25%;
+  height: 75%;
 }
 
 .input__radio:checked+.cross {
   transform: rotate(0deg);
 }
-.img__active {
-  margin: 0 auto;
-}
+
 @media screen and (min-width: 820px) and (max-width:1919px){
   .body__wrapper {
-    font-size: 30px;
+    font-size: 1.5rem;
+  }
+  li {
+    padding-left:4rem;
   }
 }
 @media screen and  (min-width:1920px){
   .body__wrapper {
-    font-size: 50px;
+    font-size: 4.5rem;
+    
+  }
+  .input__radio+label {
+    cursor: pointer;
+  }
+  li {
+    padding-left:4rem;
   }
 }
